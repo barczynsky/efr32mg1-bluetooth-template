@@ -1,0 +1,6 @@
+device EFR32MG1PxxxF256
+connect
+S
+4000
+r
+qc

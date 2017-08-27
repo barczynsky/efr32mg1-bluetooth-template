@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<!-- GATT Database -->
+	<gatt out="gatt_db.c" header="gatt_db.h" prefix="gattdb_">
+
+		<!-- Generic Access -->
+		<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.generic_access.xml -->
+		<service uuid="1800">
+			<description>Generic Access</description>
+
+			<!-- Device Name -->
+			<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.gap.device_name.xml -->
+			<characteristic uuid="2a00" id="device_name">
+				<properties read="true" write="true" />
+				<value>EFR32MG1</value>
+			</characteristic>
+
+			<!-- Appearance -->
+			<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.gap.appearance.xml -->
+			<characteristic uuid="2a01">
+				<properties read="true" />
+				<value type="hex">8000</value>
+			</characteristic>
+		</service>
+
+		<!-- Device Information -->
+		<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml -->
+		<service uuid="180a" type="primary">
+			<description>Device Information</description>
+
+			<!-- Firmware Revision String -->
+			<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.firmware_revision_string.xml -->
+			<characteristic uuid="2a26">
+				<properties read="true" />
+				<value>1.0</value>
+			</characteristic>
+		</service>
+
+		<!-- Tx Power -->
+		<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.tx_power.xml -->
+		<service uuid="1804">
+			<description>Tx Power</description>
+
+			<!-- TX Power Level -->
+			<!-- https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.tx_power_level.xml -->
+			<characteristic uuid="2a07">
+				<properties read="true" />
+				<value length="1" />
+			</characteristic>
+		</service>
+	</gatt>
+</project>

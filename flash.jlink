@@ -1,0 +1,10 @@
+device EFR32MG1PxxxF256
+connect
+S
+4000
+h
+loadfile gniazdko.bin, 0x0
+verifybin gniazdko.bin, 0x0
+r
+g
+qc
